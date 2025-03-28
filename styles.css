@@ -1,0 +1,90 @@
+:root {
+	--chatwppplus-orange-50: oklch(0.98 0.016 73.684);
+	--chatwppplus-orange-100: oklch(0.954 0.038 75.164);
+	--chatwppplus-orange-200: oklch(0.901 0.076 70.697);
+	--chatwppplus-orange-300: oklch(0.837 0.128 66.29);
+	--chatwppplus-orange-400: oklch(0.75 0.183 55.934);
+	--chatwppplus-orange-500: oklch(0.705 0.213 47.604);
+	--chatwppplus-orange-600: oklch(0.646 0.222 41.116);
+	--chatwppplus-orange-700: oklch(0.553 0.195 38.402);
+	--chatwppplus-orange-800: oklch(0.47 0.157 37.304);
+	--chatwppplus-orange-900: oklch(0.408 0.123 38.172);
+	--chatwppplus-orange-950: oklch(0.266 0.079 36.259);
+
+	--chatwppplus-neutral-100: oklch(0.97 0 0);
+}
+
+.chatwppplus-width-setter {
+	display: flex;
+	gap: 4px;
+
+	& input {
+		width: 70px;
+		height: 32px;
+		box-sizing: border-box;
+		border-radius: 6px;
+		color: var(--chatwppplus-orange-500);
+		background: white;
+		outline: none;
+		border: 2px solid var(--chatwppplus-orange-500);
+		padding-left: 6px;
+		padding-right: 6px;
+	}
+
+	& button {
+		height: 32px;
+		box-sizing: border-box;
+		background-color: var(--chatwppplus-orange-500);
+		border: none;
+		border-radius: 6px;
+		color: var(--chatwppplus-orange-50);
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+button.chatwppplus-copy-btn {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	width: 100px;
+	user-select: none;
+	padding: 2px 10px;
+	background: var(--chatwppplus-orange-800);
+	border: none;
+	margin-left: auto;
+	color: var(--chatwppplus-orange-200);
+	border-radius: 6px;
+
+	&:hover {
+		cursor: pointer;
+		color: var(--chatwppplus-orange-50);
+	}
+
+	&:active {
+		background: var(--chatwppplus-orange-600);
+	}
+}
+
+body.chatwppplus-zen-styles {
+	& .main-layout {
+		--header-height: 0px;
+		& > .main-layout__header {
+			display: none;
+		}
+	}
+
+	& .basic-header {
+		height: 50px;
+
+		& > * {
+			scale: 90%;
+		}
+	}
+
+	& .sidebar-layout__content {
+		padding-bottom: 0px;
+	}
+}
