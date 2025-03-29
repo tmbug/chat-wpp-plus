@@ -176,7 +176,14 @@ function copyCodeButtons() {
 function highlight() {
 	setInterval(() => {
 		document.querySelectorAll("pre > code").forEach((block) => {
-			hljs.highlightElement(block);
+			if(block.querySelector("span.chatwppplus-iamalreadyhighlighted")) {
+				return;
+			}else {
+				hljs.highlightElement(block);
+				const span = document.createElement("span");
+				span.className = "chatwppplus-iamalreadyhighlighted";
+				block.append(span);
+			}
 		});
 	}, 3000);
 }
