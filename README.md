@@ -4,6 +4,7 @@
 * UI Customizations
 	* Custom Chat Width
 	* Zen Mode
+	* Collapse Code Blocks
 
 (scroll down for installation guides 🙂)
 
