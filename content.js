@@ -17,10 +17,13 @@ function chatWidthAndZenSetter() {
 		`
 		<div class="chatwppplus-width-setter">
 			<input type="number" step="50" placeholder="width" min="200" value="${width}">
-			<button class="chatwppplus-width-btn">set width</button>
-			<button class="chatwppplus-zen-btn">zen ${
+			<button class="chatwppplus-width-btn chatwppplus-mr">set width</button>
+			<button class="chatwppplus-zen-btn chatwppplus-mr">zen ${
 				zenMode === "on" ? "🟢" : "🔴"
 			}</button>
+			<button class="chatwppplus-code-collapse-btn" aria-label="collapse long codeblocks for easier scrolling through the chat">
+				<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-fold-vertical-icon lucide-fold-vertical"><path d="M12 22v-6"/><path d="M12 8V2"/><path d="M4 12H2"/><path d="M10 12H8"/><path d="M16 12h-2"/><path d="M22 12h-2"/><path d="m15 19-3-3-3 3"/><path d="m15 5-3 3-3-3"/></svg>
+			</button>
 		</div>
 
 		<style>
@@ -83,6 +86,7 @@ function chatWidthAndZenSetter() {
 		const zenBtn = getTargetElement().querySelector(
 			".chatwppplus-width-setter > .chatwppplus-zen-btn"
 		);
+		const codeCollapseBtn = getTargetElement().querySelector(".chatwppplus-code-collapse-btn");
 
 		widthSetBtn.addEventListener("click", () => {
 			document.querySelector(
@@ -102,6 +106,29 @@ function chatWidthAndZenSetter() {
 				zenBtn.innerText = "zen 🟢";
 			}
 		});
+
+		const codeCollapseStylesText = `
+			pre {
+				max-height: 550px;
+				&::-webkit-scrollbar{
+					width: 10px;
+				}
+			}
+		`
+		const codeCollapseStyles = document.createElement("style")
+		codeCollapseStyles.textContent = codeCollapseStylesText
+
+		codeCollapseBtn.addEventListener("click", () => {
+			const codeCollapseActiveClass = "chatwppplus-code-collapse-btn-active"
+
+			if(codeCollapseBtn.classList.contains(codeCollapseActiveClass)){
+				codeCollapseBtn.classList.remove(codeCollapseActiveClass)
+				document.head.removeChild(codeCollapseStyles)
+			}else {
+				codeCollapseBtn.classList.add(codeCollapseActiveClass)
+				document.head.appendChild(codeCollapseStyles)
+			}
+		})
 	}
 }
 

@@ -7,7 +7,7 @@
 	"content_scripts": [
 	  {
 		"matches": ["https://imagine.wpp.ai/chat/*"],
-		"css": ["balloon.min.css", "styles.css"],
+		"css": ["styles.css"],
 		"js": ["github-dark-css.js","highlight.min.js", "content.js"],
 		"run_at": "document_idle"
 	  }

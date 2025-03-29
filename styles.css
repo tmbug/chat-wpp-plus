@@ -35,13 +35,58 @@
 		height: 32px;
 		box-sizing: border-box;
 		background-color: var(--chatwppplus-orange-500);
+		color: var(--chatwppplus-orange-50);
 		border: none;
 		border-radius: 6px;
-		color: var(--chatwppplus-orange-50);
 
 		&:hover {
 			cursor: pointer;
 		}
+
+		&:active {
+			background: var(--chatwppplus-orange-600);
+		}
+	}
+
+	& .chatwppplus-code-collapse-btn {
+		--balloon-color: var(--chatwppplus-orange-500);
+		display: flex;
+		align-items: center;
+		background-color: white;
+		color: var(--chatwppplus-orange-500);
+		border: 2px solid var(--chatwppplus-orange-500);
+		position: relative;
+
+		&::after {
+			content: attr(aria-label);
+			position: absolute;
+			bottom: -60px;
+			left: -65px;
+			transform: translateX(-50%);
+			background: var(--chatwppplus-orange-500);
+			color: white;
+			padding: 5px 8px;
+			width: 200px;
+			border-radius: 4px;
+			font-size: 12px;
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.2s ease-in-out;
+		}
+
+		&:hover::after {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	& .chatwppplus-code-collapse-btn-active {
+		background-color: var(--chatwppplus-orange-500);
+		color: var(--chatwppplus-orange-50);
+	}
+
+	.chatwppplus-mr {
+		margin-right: 6px;
 	}
 }
 
